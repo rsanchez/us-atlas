@@ -65,15 +65,9 @@ If you want to install this software using an alternate method see the website f
 
 Once you have everything installed, you can make various targets defined in the Makefile.
 
-<b>topo/us-10m.json</b>
+<b>topo/us-states-only-counties-10m.json</b>
 
-The U.S. county, state and nation boundaries simplified at 1:10,000,000 scale.
-
-<b>topo/us-congress-10m.json</b>
-
-The districts of the 113th U.S. Congress simplified at 1:10,000,000 scale.
-
-There are partial targets defined for a large number of other boundary areas and geographic features. However, you’ll have to figure these out on your own for now. Sorry!
+County boundaries only, one file for each state.
 
 <b>topo/us-states-no-counties-10m.json</b>
 
