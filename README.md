@@ -41,8 +41,9 @@ brew install node gdal
 Then, clone this repository and install its dependencies:
 
 ```bash
-git clone https://github.com/mbostock/us-atlas.git
+git clone https://github.com/rsanchez/us-atlas.git
 cd us-atlas
+git checkout nll
 npm install
 ```
 
