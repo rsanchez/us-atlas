@@ -626,6 +626,17 @@ topo/us-congress-10m-ungrouped.json: shp/us/congress-ungrouped.shp
 		--id-property=+GEOID \
 		-- districts=$<
 
+topo/us-%-counties-10m.json: shp/%/counties.shp
+	mkdir -p $(dir $@)
+	node_modules/.bin/topojson \
+		-o $@ \
+		--properties STATE,COUNTY \
+		--no-pre-quantization \
+		--post-quantization=1e6 \
+		--simplify=7e-7 \
+		--id-property=+FIPS \
+		-- $<
+
 topo/us-counties-10m-ungrouped.json: shp/us/counties.shp
 	mkdir -p $(dir $@)
 	node_modules/.bin/topojson \
@@ -671,3 +682,58 @@ topo/us-states-no-counties-10m.json: shp/us/states.shp
 		--simplify=7e-7 \
 		--id-property=+STATE_FIPS \
 		-- $<
+
+topo/us-states-only-counties-10m.json:
+	make topo/us-al-counties-10m.json
+	make topo/us-ak-counties-10m.json
+	make topo/us-az-counties-10m.json
+	make topo/us-ar-counties-10m.json
+	make topo/us-ca-counties-10m.json
+	make topo/us-co-counties-10m.json
+	make topo/us-ct-counties-10m.json
+	make topo/us-de-counties-10m.json
+	make topo/us-dc-counties-10m.json
+	make topo/us-fl-counties-10m.json
+	make topo/us-ga-counties-10m.json
+	make topo/us-hi-counties-10m.json
+	make topo/us-id-counties-10m.json
+	make topo/us-il-counties-10m.json
+	make topo/us-in-counties-10m.json
+	make topo/us-ia-counties-10m.json
+	make topo/us-ks-counties-10m.json
+	make topo/us-ky-counties-10m.json
+	make topo/us-la-counties-10m.json
+	make topo/us-me-counties-10m.json
+	make topo/us-md-counties-10m.json
+	make topo/us-ma-counties-10m.json
+	make topo/us-mi-counties-10m.json
+	make topo/us-mn-counties-10m.json
+	make topo/us-ms-counties-10m.json
+	make topo/us-mo-counties-10m.json
+	make topo/us-mt-counties-10m.json
+	make topo/us-ne-counties-10m.json
+	make topo/us-nv-counties-10m.json
+	make topo/us-nh-counties-10m.json
+	make topo/us-nj-counties-10m.json
+	make topo/us-nm-counties-10m.json
+	make topo/us-ny-counties-10m.json
+	make topo/us-nc-counties-10m.json
+	make topo/us-nd-counties-10m.json
+	make topo/us-oh-counties-10m.json
+	make topo/us-ok-counties-10m.json
+	make topo/us-or-counties-10m.json
+	make topo/us-pa-counties-10m.json
+	make topo/us-ri-counties-10m.json
+	make topo/us-sc-counties-10m.json
+	make topo/us-sd-counties-10m.json
+	make topo/us-tn-counties-10m.json
+	make topo/us-tx-counties-10m.json
+	make topo/us-ut-counties-10m.json
+	make topo/us-vt-counties-10m.json
+	make topo/us-va-counties-10m.json
+	make topo/us-wa-counties-10m.json
+	make topo/us-wv-counties-10m.json
+	make topo/us-wi-counties-10m.json
+	make topo/us-wy-counties-10m.json
+	make topo/us-pr-counties-10m.json
+	make topo/us-vi-counties-10m.json
