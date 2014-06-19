@@ -65,10 +65,10 @@ If you want to install this software using an alternate method see the website f
 
 Once you have everything installed, you can make various targets defined in the Makefile.
 
-<b>topo/us-states-only-counties-10m.json</b>
+<b>topo/us-XX-counties-10m.topojson</b>
 
-County boundaries only, one file for each state.
+Make a topojson file for each state of county boundaries.
 
-<b>topo/us-states-no-counties-10m.json</b>
+<b>topo/us-states-no-counties-10m.topojson</b>
 
 The same as us-10m, but without county boundaries.
